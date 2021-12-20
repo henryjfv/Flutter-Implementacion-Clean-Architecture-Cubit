@@ -15,11 +15,11 @@ class _ListViewUserState extends State<ListViewUser> {
   List<UserModel> usersfilter = [];
   List<UserModel> usersTemp;
 
-  
   @override
   Widget build(BuildContext context) {
     TextEditingController _queryController;
     usersTemp = widget.users;
+    usersfilter = usersfilter.length == 0 ? usersTemp : usersfilter;
     return Container(
       child: Column(
         children: [

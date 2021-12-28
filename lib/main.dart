@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prueba_ingreso_ceiba/presentation/views/users/users_view.dart';
 import 'injection_container.dart' as di;
-/* ESTOY EN LA RAMA MASTER */
 void main() async {
   await di.init();
   runApp(MyApp());

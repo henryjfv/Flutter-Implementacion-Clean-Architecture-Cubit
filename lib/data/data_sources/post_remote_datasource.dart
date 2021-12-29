@@ -1,6 +1,5 @@
 import 'package:prueba_ingreso_ceiba/core/errors/exceptions.dart';
 import 'package:prueba_ingreso_ceiba/data/models/post_model.dart';
-import 'package:prueba_ingreso_ceiba/data/models/user_model.dart';
 import 'package:http/http.dart' as http;
 
 abstract class PostRemoteDataSource {

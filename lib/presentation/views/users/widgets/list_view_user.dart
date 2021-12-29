@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:prueba_ingreso_ceiba/data/models/user_model.dart';
-import 'package:prueba_ingreso_ceiba/presentation/views/widgets/item_user_card.dart';
 
+import 'item_user_card.dart';
+
+// ignore: must_be_immutable
 class ListViewUser extends StatefulWidget {
   List<UserModel> users;
 
-  ListViewUser({Key key, this.users}) : super(key: key);
+  ListViewUser({Key? key, required this.users}) : super(key: key);
 
   @override
   State<ListViewUser> createState() => _ListViewUserState();
@@ -13,11 +15,10 @@ class ListViewUser extends StatefulWidget {
 
 class _ListViewUserState extends State<ListViewUser> {
   List<UserModel> usersfilter = [];
-  List<UserModel> usersTemp;
+  List<UserModel> usersTemp = [];
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController _queryController;
     usersTemp = widget.users;
     usersfilter = usersfilter.length == 0 ? usersTemp : usersfilter;
     return Container(
@@ -28,7 +29,6 @@ class _ListViewUserState extends State<ListViewUser> {
             child: TextField(
                 style: TextStyle(color: Colors.black, fontSize: 18.0),
                 cursorColor: Colors.brown,
-                controller: _queryController,
                 autofocus: true,
                 decoration: InputDecoration(
                   hintText: "Buscar usuario",
@@ -50,7 +50,7 @@ class _ListViewUserState extends State<ListViewUser> {
                   }
                 }),
           ),
-          usersfilter != null && usersfilter.length > 0
+          usersfilter.length > 0
               ? _list(usersfilter)
               : Center(
                   child: Text(

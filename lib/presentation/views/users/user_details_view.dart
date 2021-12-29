@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loading_indicator/loading_indicator.dart';
-import 'package:provider/src/provider.dart';
 import 'package:prueba_ingreso_ceiba/data/models/user_model.dart';
-import 'package:prueba_ingreso_ceiba/domain/entities/post.dart';
 import 'package:prueba_ingreso_ceiba/injection_container.dart';
 import 'package:prueba_ingreso_ceiba/presentation/cubit/posts/post_cubit.dart';
 import 'package:prueba_ingreso_ceiba/presentation/views/posts/post_view_widget.dart';
+import 'package:prueba_ingreso_ceiba/presentation/views/widgets/loading_widget.dart';
 
 class UserDetailView extends StatelessWidget {
   final UserModel item;
 
-  const UserDetailView({Key key, this.item}) : super(key: key);
+  const UserDetailView({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -88,32 +87,12 @@ class UserDetailView extends StatelessWidget {
                           builder: (context, state) {
                         if (state is PostInitial) {
                           _getPost(context, item.id);
-                          return Center(
-                            child: SizedBox(
-                              height: 50.0,
-                              width: 50.0,
-                              child: LoadingIndicator(
-                                indicatorType: Indicator.ballRotateChase,
-                                colors: const [Colors.green],
-                                strokeWidth: 2.0,
-                              ),
-                            ),
-                          );
+                          return LoadingWidget();
                         } else if (state is PostLoaded) {
                           final posts = state.posts;
                           return PostViewWidget(posts: posts);
                         } else if (state is PostLoading) {
-                          return Center(
-                            child: SizedBox(
-                              height: 50.0,
-                              width: 50.0,
-                              child: LoadingIndicator(
-                                indicatorType: Indicator.ballRotateChase,
-                                colors: const [Colors.green],
-                                strokeWidth: 2.0,
-                              ),
-                            ),
-                          );
+                          return LoadingWidget();
                         } else {
                           return Container(
                             child: Center(

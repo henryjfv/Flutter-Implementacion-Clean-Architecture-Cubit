@@ -2,10 +2,10 @@ import 'package:equatable/equatable.dart';
 
 class Post extends Equatable{
     Post({
-        this.userId,
-        this.id,
-        this.title,
-        this.body,
+        required this.userId,
+        required this.id,
+        required this.title,
+        required this.body,
     });
 
     final int userId;

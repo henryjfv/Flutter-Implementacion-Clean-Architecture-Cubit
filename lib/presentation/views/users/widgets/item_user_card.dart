@@ -5,7 +5,7 @@ import 'package:prueba_ingreso_ceiba/presentation/views/users/user_details_view.
 class ItemCardUser extends StatelessWidget {
   final UserModel item;
 
-  const ItemCardUser({Key key, this.item}) : super(key: key);
+  const ItemCardUser({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

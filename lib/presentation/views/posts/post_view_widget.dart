@@ -4,7 +4,7 @@ import 'package:prueba_ingreso_ceiba/data/models/post_model.dart';
 class PostViewWidget extends StatelessWidget {
   final List<PostModel> posts;
 
-  const PostViewWidget({Key key, this.posts}) : super(key: key);
+  const PostViewWidget({Key? key, required this.posts}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +33,5 @@ class PostViewWidget extends StatelessWidget {
         },
       ),
     );
-    ;
   }
 }

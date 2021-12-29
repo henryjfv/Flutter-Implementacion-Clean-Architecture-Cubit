@@ -7,13 +7,13 @@ import 'package:prueba_ingreso_ceiba/domain/use_cases/get_users.dart';
 part 'user_state.dart';
 
 class UserCubit extends Cubit<UserState> {
-  final GetUsers getUser;
+  final GetUsers getUsers;
 
-  UserCubit(this.getUser) : super(UsersInitial());
+  UserCubit(this.getUsers) : super(UsersInitial());
 
-  void getNewUser() async {
+  void getUsersCubit() async {
     emit(UsersLoading());
-    final failureOrUser = await getUser();
+    final failureOrUser = await getUsers();
     emit(_failureOrUser(failureOrUser));
   }
 

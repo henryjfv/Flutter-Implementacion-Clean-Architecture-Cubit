@@ -2,14 +2,14 @@ import 'package:equatable/equatable.dart';
 
 class User extends Equatable {
     User({
-        this.id,
-        this.name,
-        this.username,
-        this.email,
-        this.address,
-        this.phone,
-        this.website,
-        this.company,
+        required this.id,
+        required this.name,
+        required this.username,
+        required this.email,
+        required this.address,
+        required this.phone,
+        required this.website,
+        required this.company,
     });
 
     final int id;
@@ -27,11 +27,11 @@ class User extends Equatable {
 
 class Address extends Equatable{
     Address({
-        this.street,
-        this.suite,
-        this.city,
-        this.zipcode,
-        this.geo,
+        required this.street,
+        required this.suite,
+        required this.city,
+        required this.zipcode,
+        required this.geo,
     });
 
     final String street;
@@ -46,8 +46,8 @@ class Address extends Equatable{
 
 class Geo extends Equatable {
     Geo({
-        this.lat,
-        this.lng,
+        required this.lat,
+        required this.lng,
     });
 
     final String lat;
@@ -59,9 +59,9 @@ class Geo extends Equatable {
 
 class Company extends Equatable {
     Company({
-        this.name,
-        this.catchPhrase,
-        this.bs,
+        required this.name,
+        required this.catchPhrase,
+        required this.bs,
     });
 
     final String name;

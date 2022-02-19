@@ -1,4 +1,4 @@
-# prueba_ingreso_ceiba
+# Implementacion Clean Architecture + Cubit, en Flutter
 
 A new Flutter project.
 
